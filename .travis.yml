@@ -9,16 +9,16 @@ script:
   - docker run -e CI=true radhakrishna1979/react-test npm run test -- --coverage
 
 after_success:
-  - docker build -t radhakrishna/multi-rk-client ./client 
-  - docker build -t radhakrishna/multi-rk-nginx  ./nginx
-  - docker build -t radhakrishna/multi-rk-server ./server
-  - docker build -t radhakrishna/multi-rk-worker ./worker
+  - docker build -t kommera1979/multi-rk-client ./client 
+  - docker build -t kommera1979/multi-rk-nginx  ./nginx
+  - docker build -t kommera1979/multi-rk-server ./server
+  - docker build -t kommera1979/multi-rk-worker ./worker
 
   - echo "$DOCKER_PASSWORD"  | docker login -u "$DOCKER_ID" --password-stdin
-  - docker push radhakrishna/multi-rk-client
-  - docker push radhakrishna/multi-rk-nginx
-  - docker push radhakrishna/multi-rk-server
-  - docker push radhakrishna/multi-rk-worker
+  - docker push kommera1979/multi-rk-client
+  - docker push kommera1979/multi-rk-nginx
+  - docker push kommera1979/multi-rk-server
+  - docker push kommera1979/multi-rk-worker
 
 
   
