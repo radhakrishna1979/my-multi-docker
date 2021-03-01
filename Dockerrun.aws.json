@@ -1,0 +1,11 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [
+        {
+            "name": "client",
+            "image": "radhakrishna/multi-rk-client",
+            "hostname": "client"
+        }
+    ]
+
+}
