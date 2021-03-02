@@ -3,28 +3,28 @@
   "containerDefinitions": [
     {
       "name": "client",
-      "image": "radhakrishna/multi-rk-client",
+      "image": "kommera1979/multi-rk-client",
       "hostname": "client",
       "essential": false,
       "memory": 128
     },
     {
       "name": "server",
-      "image": "radhakrishna/multi-rk-server",
+      "image": "kommera1979/multi-rk-server",
       "hostname": "api",
       "essential": false,
       "memory": 128
     },
     {
-      "name": "client",
-      "image": "radhakrishna/multi-rk-client",
-      "hostname": "client",
+      "name": "worker",
+      "image": "kommera1979/multi-rk-worker",
+      "hostname": "worker",
       "essential": "false",
       "memory": 128
     },
     {
       "name": "nginx",
-      "image": "radhakrishna/multi-rk-nginx",
+      "image": "kommera1979/multi-rk-nginx",
       "hostname": "nginx",
       "essential": "true",
       "portMappings": [
