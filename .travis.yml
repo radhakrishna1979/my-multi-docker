@@ -1,4 +1,6 @@
 sudo: required
+language: generic
+
 services:
   - docker
 
@@ -14,7 +16,7 @@ after_success:
   - docker build -t kommera1979/multi-rk-server ./server
   - docker build -t kommera1979/multi-rk-worker ./worker
 
-  - echo "$DOCKER_PASSWORD"  | docker login -u "$DOCKER_ID" --password-stdin
+  - echo "$DOCKER_PASSWORD"  |  docker login -u "$DOCKER_ID" --password-stdin
   - docker push kommera1979/multi-rk-client
   - docker push kommera1979/multi-rk-nginx
   - docker push kommera1979/multi-rk-server
@@ -26,7 +28,7 @@ deploy:
   app: 'multi-docker-app'
   env: 'Multidockerapp-env'
   bucket_name: 'elasticbeanstalk-us-west-2-319762603406'
-  bucket_path: 'docker-multi'
+  bucket_path: 'multi-docker-app'
   on:
     branch: master
   access_key_id: $AWS_ACCESS_KEY
